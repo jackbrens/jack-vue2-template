@@ -1,10 +1,15 @@
 <template>
-<div>about~~~~~1111111111~~~</div>
+<div>about~~~~~{{ about }}~~~</div>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  data() {
+    return {
+      about: '关于我们'
+    }
+  }
 }
 </script>
 

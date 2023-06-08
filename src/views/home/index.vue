@@ -1,10 +1,13 @@
 <template>
-  <div class="home">Home {{ name }}</div>
+  <div class="home"><hello-word/></div>
 </template>
 
 <script>
+import HelloWord from "@/components/HelloWord"
 export default {
   name: "Home",
+  components: { HelloWord },
+
   data() {
     return {
       name: 'jack'
@@ -17,10 +20,5 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  width: 500px;
-  height: 500px;
-  background: url("../../assets/images/223819.jpg") no-repeat;
-  background-size: cover;
-}
+
 </style>
