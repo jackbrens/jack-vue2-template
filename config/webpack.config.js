@@ -1,4 +1,6 @@
 const path = require('path')
+// HMR和打包的进度条美化
+const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -138,6 +140,7 @@ module.exports = {
         },
       ],
     }),
+    new WebpackBar(),
   ].filter(Boolean),
   mode: isProduction ? 'production' : 'development',
   // 自动补全文件拓展名
