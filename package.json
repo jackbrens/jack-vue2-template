@@ -1,50 +1,77 @@
 {
-  "name": "jack-vue2-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.22.1",
-    "@babel/eslint-parser": "^7.21.8",
-    "@babel/preset-env": "^7.22.4",
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/compiler-sfc": "^3.3.4",
-    "babel-loader": "^9.1.2",
-    "copy-webpack-plugin": "^11.0.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.8.1",
-    "css-minimizer-webpack-plugin": "^5.0.0",
-    "eslint": "^8.41.0",
-    "eslint-plugin-vue": "^9.14.1",
-    "eslint-webpack-plugin": "^4.0.1",
-    "html-webpack-plugin": "^5.5.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.24",
-    "postcss-loader": "^7.3.2",
-    "postcss-preset-env": "^8.4.1",
-    "style-loader": "^3.3.3",
-    "terser-webpack-plugin": "^5.3.9",
-    "vue-loader": "15.9.8",
-    "vue-template-compiler": "2.6.12",
-    "webpack": "^5.84.1",
-    "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0",
-    "webpackbar": "^5.0.2"
-  },
-  "dependencies": {
-    "vue": "2.6.12",
-    "vue-router": "^3.6.5"
-  },
-  "browserslist": [
-    "last 2 version",
-    "> 1%",
-    "not dead"
-  ]
+	"name": "jack-vue2-template",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
+		"build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
+		"prepare": "husky install",
+		"lint": "eslint --ext .js,.vue .",
+		"lint:lint-staged": "lint-staged",
+		"commit": "yarn git-cz"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.22.1",
+		"@babel/eslint-parser": "^7.21.8",
+		"@babel/preset-env": "^7.22.4",
+		"@commitlint/cli": "^17.6.5",
+		"@commitlint/config-conventional": "^17.6.5",
+		"@vue/cli-plugin-babel": "^5.0.8",
+		"@vue/compiler-sfc": "^3.3.4",
+		"babel-loader": "^9.1.2",
+		"commitizen": "^4.3.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^6.8.1",
+		"css-minimizer-webpack-plugin": "^5.0.0",
+		"cz-git": "^1.6.1",
+		"eslint": "^8.41.0",
+		"eslint-plugin-vue": "^9.14.1",
+		"eslint-webpack-plugin": "^4.0.1",
+		"html-webpack-plugin": "^5.5.1",
+		"lint-staged": "^13.2.2",
+		"mini-css-extract-plugin": "^2.7.6",
+		"mrm": "^4.1.14",
+		"postcss": "^8.4.24",
+		"postcss-loader": "^7.3.2",
+		"postcss-preset-env": "^8.4.1",
+		"style-loader": "^3.3.3",
+		"terser-webpack-plugin": "^5.3.9",
+		"vue-loader": "15.9.8",
+		"vue-template-compiler": "2.6.12",
+		"webpack": "^5.84.1",
+		"webpack-cli": "^5.1.1",
+		"webpack-dev-server": "^4.15.0",
+		"webpackbar": "^5.0.2"
+	},
+	"dependencies": {
+		"vue": "2.6.12",
+		"vue-router": "^3.6.5"
+	},
+	"browserslist": [
+		"last 2 version",
+		"> 1%",
+		"not dead"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,jsx,vue,ts,tsx}": [
+			"yarn lint",
+			"prettier --write",
+			"git add"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-git"
+		}
+	}
 }
