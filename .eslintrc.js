@@ -5,7 +5,7 @@ module.exports = {
 		browser: true, // 启动浏览器中全局变量
 	},
 	// 继承 eslint 的规则
-	extends: ['plugin:vue/essential', 'eslint:recommended'],
+	extends: ['plugin:vue/essential', 'eslint:recommended', 'plugin:prettier/recommended', 'prettier'],
 	parserOptions: {
 		parser: '@babel/eslint-parser',
 		ecmaVersion: 2021,

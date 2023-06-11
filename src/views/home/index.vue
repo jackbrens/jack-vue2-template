@@ -1,24 +1,22 @@
 <template>
-  <div class="home"><hello-word/></div>
+	<div class="home"><hello-word /></div>
 </template>
 
 <script>
-import HelloWord from "@/components/HelloWord"
+import HelloWord from '@/components/HelloWord'
 export default {
-  name: "Home",
-  components: { HelloWord },
+	name: 'Home',
+	components: { HelloWord },
 
-  data() {
-    return {
-      name: 'jack'
-    }
-  },
-  created() {
-    console.log('hello home')
-  }
+	data() {
+		return {
+			name: 'jack',
+		}
+	},
+	created() {
+		console.log('hello home')
+	},
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
