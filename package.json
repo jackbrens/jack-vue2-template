@@ -7,7 +7,7 @@
 		"dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
 		"build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
 		"prepare": "husky install",
-		"lint": "eslint --ext .js,.vue .",
+		"lint": "eslint --fix --ext .js,.vue ./",
 		"lint:lint-staged": "lint-staged",
 		"commit": "yarn git-cz"
 	},
